@@ -1,0 +1,10 @@
+/src/*.js
+src/*.js
+/node_modules
+/build
+/*.js
+** / *. js
+node_modules/*
+build/*
+node_modules/
+build/
