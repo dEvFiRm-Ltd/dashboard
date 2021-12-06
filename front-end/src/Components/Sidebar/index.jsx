@@ -1,6 +1,9 @@
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Sidebar = () => {
+    const location = useLocation();
+    console.log(location.pathname);
     return (
         <div className="sidebar sidebar-light sidebar-main sidebar-expand-lg align-self-start">
             {/* Sidebar content */}
@@ -58,7 +61,7 @@ const Sidebar = () => {
                             <i className="icon-menu" title="Main" />
                         </li>
                         <li className="nav-item">
-                            <a href="index.html" className="nav-link active">
+                            <Link to="/" className="nav-link active">
                                 <i className="icon-home4" />
                                 <span>
                                     Dashboard
@@ -66,76 +69,21 @@ const Sidebar = () => {
                                         No active orders
                                     </span>
                                 </span>
-                            </a>
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to="form" className="nav-link">
+                                <i className="icon-home4" />
+                                <span>Form</span>
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to="list" className="nav-link">
+                                <i className="icon-home4" />
+                                <span>List</span>
+                            </Link>
                         </li>
                         {/* /main */}
-
-                        {/* Layout */}
-                        <li className="nav-item-header">
-                            <div className="text-uppercase font-size-xs line-height-xs">Layout</div>{' '}
-                            <i className="icon-menu" title="Layout options" />
-                        </li>
-                        <li className="nav-item nav-item-submenu">
-                            <a href="!#" className="nav-link">
-                                <i className="icon-stack2" /> <span>Page layouts</span>
-                            </a>
-                            <ul className="nav nav-group-sub" data-submenu-title="Page layouts">
-                                <li className="nav-item">
-                                    <a href="layout_navbar_fixed.html" className="nav-link">
-                                        Fixed navbar
-                                    </a>
-                                </li>
-                                <li className="nav-item">
-                                    <a href="layout_navbar_hideable.html" className="nav-link">
-                                        Hideable navbar
-                                    </a>
-                                </li>
-                                <li className="nav-item-divider" />
-                                <li className="nav-item">
-                                    <a href="layout_no_header.html" className="nav-link">
-                                        No header
-                                    </a>
-                                </li>
-                                <li className="nav-item">
-                                    <a href="layout_no_footer.html" className="nav-link">
-                                        No footer
-                                    </a>
-                                </li>
-                                <li className="nav-item">
-                                    <a href="layout_fixed_footer.html" className="nav-link">
-                                        Fixed footer
-                                    </a>
-                                </li>
-                                <li className="nav-item-divider" />
-                                <li className="nav-item">
-                                    <a href="layout_2_sidebars_1_side.html" className="nav-link">
-                                        2 sidebars on 1 side
-                                    </a>
-                                </li>
-                                <li className="nav-item">
-                                    <a href="layout_2_sidebars_2_sides.html" className="nav-link">
-                                        2 sidebars on 2 sides
-                                    </a>
-                                </li>
-                                <li className="nav-item">
-                                    <a href="layout_3_sidebars.html" className="nav-link">
-                                        3 sidebars
-                                    </a>
-                                </li>
-                                <li className="nav-item-divider" />
-                                <li className="nav-item">
-                                    <a href="layout_boxed_page.html" className="nav-link">
-                                        Boxed page
-                                    </a>
-                                </li>
-                                <li className="nav-item">
-                                    <a href="layout_boxed_content.html" className="nav-link">
-                                        Boxed content
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        {/* /layout */}
                     </ul>
                 </div>
                 {/* /main navigation */}

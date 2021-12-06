@@ -19,7 +19,7 @@ const Dashboard = () => {
                                         type="checkbox"
                                         className="custom-control-input"
                                         id="checks"
-                                        checked
+                                        defaultChecked
                                     />
                                     <span className="custom-control-label">Live update</span>
                                 </label>
@@ -143,9 +143,7 @@ const Dashboard = () => {
                                 <select className="form-control custom-select" id="select_date">
                                     <option value="val1">June, 29 - July, 5</option>
                                     <option value="val2">June, 22 - June 28</option>
-                                    <option value="val3" selected>
-                                        June, 15 - June, 21
-                                    </option>
+                                    <option defaultValue="val3">June, 15 - June, 21</option>
                                     <option value="val4">June, 8 - June, 14</option>
                                 </select>
                             </div>
