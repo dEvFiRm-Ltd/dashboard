@@ -25,6 +25,7 @@
         "SharedArrayBuffer": "readonly"
     },
     "rules": {
+        "react/no-danger": "off",
         "react/react-in-jsx-scope": 0,
         "react-hooks/rules-of-hooks": "error",
         "no-console": 0,
