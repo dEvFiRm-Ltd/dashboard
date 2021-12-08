@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Magic Card</title>
+    <style>
+      /* Dump Code */
+      body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #000;
+      }
+      /* Main Code */
+
+      @property --rotate {
+        syntax: '<angle>';
+        initial-value: 132deg;
+        inherits: false;
+      }
+
+      :root {
+        --cardHeight: 200px;
+        --cardWidth: calc(var(--cardHeight) / 1.5);
+      }
+      .card {
+        background: #ffffff;
+        width: var(--cardWidth);
+        height: var(--cardHeight);
+        border-radius: 6px;
+        padding: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+        color: rgb(88, 199, 250/0%);
+      }
+      .card:hover {
+        color: rgb(88, 199, 250/100%);
+        transition: color 1s;
+      }
+      .card::after,
+      .card::before {
+        content: '';
+        position: absolute;
+      }
+      .card::before {
+        top: -1%;
+        left: -2%;
+        width: 104%;
+        height: 102%;
+        background: linear-gradient(
+          var(--rotate),
+          rgba(254, 16, 159, 1) 0%,
+          rgba(254, 233, 1, 1) 43%,
+          rgba(0, 255, 0, 1) 100%
+        );
+        animation: spins 2.5s infinite linear;
+        border-radius: 6px;
+        z-index: -1;
+      }
+
+      @keyframes spins {
+        0% {
+          --rotate: 0deg;
+        }
+        100% {
+          --rotate: 360deg;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">magic card</div>
+  </body>
+</html>

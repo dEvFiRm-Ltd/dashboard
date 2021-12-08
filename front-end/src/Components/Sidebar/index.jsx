@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 const Sidebar = () => {
     const location = useLocation();
@@ -61,7 +61,12 @@ const Sidebar = () => {
                             <i className="icon-menu" title="Main" />
                         </li>
                         <li className="nav-item">
-                            <Link to="/" className="nav-link active">
+                            <NavLink
+                                to="/"
+                                className={({ isActive }) =>
+                                    isActive ? 'nav-link active' : 'nav-link'
+                                }
+                            >
                                 <i className="icon-home4" />
                                 <span>
                                     Dashboard
@@ -69,19 +74,29 @@ const Sidebar = () => {
                                         No active orders
                                     </span>
                                 </span>
-                            </Link>
+                            </NavLink>
                         </li>
                         <li className="nav-item">
-                            <Link to="form" className="nav-link">
+                            <NavLink
+                                to="form"
+                                className={({ isActive }) =>
+                                    isActive ? 'nav-link active' : 'nav-link'
+                                }
+                            >
                                 <i className="icon-home4" />
                                 <span>Form</span>
-                            </Link>
+                            </NavLink>
                         </li>
                         <li className="nav-item">
-                            <Link to="list" className="nav-link">
+                            <NavLink
+                                to="list"
+                                className={({ isActive }) =>
+                                    isActive ? 'nav-link active' : 'nav-link'
+                                }
+                            >
                                 <i className="icon-home4" />
                                 <span>List</span>
-                            </Link>
+                            </NavLink>
                         </li>
                         {/* /main */}
                     </ul>
